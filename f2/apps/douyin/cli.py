@@ -134,15 +134,7 @@ def handler_naming(
     ALLOWED_PATTERNS = ["{nickname}", "{create}", "{aweme_id}", "{desc}", "{uid}"]
     ALLOWED_SEPARATORS = ["-", "_"]
 
-    # 检查命名是否符合命名规范
-    invalid_patterns = check_invalid_naming(value, ALLOWED_PATTERNS, ALLOWED_SEPARATORS)
 
-    if invalid_patterns:
-        raise click.BadParameter(
-            _("`{0}` 中的 `{1}` 不符合命名模式").format(
-                value, "".join(invalid_patterns)
-            )
-        )
 
     return value
 
